@@ -1,17 +1,20 @@
-import puppeteer from "puppeteer";
+import axios from "axios";
 
 async function main() {
 
-    const browser = await puppeteer.launch({ headless: false });
+    const accessUrlAndPrintMessage = async () => {
+        try {
+            await axios.get('https://api-portifolio-ohio-br.onrender.com/');
+            console.log('Página acessada!');
+        } catch (error) {
+            console.error('Erro ao acessar a página:', error.message);
+        }
+    };
 
-    const page = await browser.newPage();
+    await accessUrlAndPrintMessage();
 
-    await page.goto('https://api-portifolio-ohio-br.onrender.com/');
+    setInterval(accessUrlAndPrintMessage, 30 * 60 * 1000);
 
-    setInterval(async () => {
-        await page.reload();
-        console.log('Página atualizada!');
-    }, 30 * 60 * 1000);
     await new Promise(() => { });
 }
 
