@@ -13,7 +13,7 @@ async function main() {
 
     await accessUrlAndPrintMessage();
 
-    setInterval(accessUrlAndPrintMessage, 30 * 60 * 1000);
+    setInterval(accessUrlAndPrintMessage, 15 * 60 * 1000);
 
     await new Promise(() => { });
 }
