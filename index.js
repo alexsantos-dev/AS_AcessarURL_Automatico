@@ -4,7 +4,7 @@ async function main() {
 
     const accessUrlAndPrintMessage = async () => {
         try {
-            await axios.get('https://api-portifolio-ohio-br.onrender.com/');
+            await axios.get('url');
             console.log('Página acessada!');
         } catch (error) {
             console.error('Erro ao acessar a página:', error.message);
